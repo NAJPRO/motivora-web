@@ -1,8 +1,75 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark, luxury;
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: motivora;
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  /* Base (fond & texte) */
+  --color-base-100: oklch(98% 0.01 240);
+  --color-base-200: oklch(95% 0.015 240);
+  --color-base-300: oklch(92% 0.02 240);
+  --color-base-content: oklch(20% 0.04 260);
+
+  /* Primary – GOLD (motivation / action) */
+  --color-primary: oklch(78% 0.17 85);          /* ≈ #FBBF24 */
+  --color-primary-content: oklch(20% 0.04 260); /* lisible sur gold */
+
+  /* Secondary – Bleu Motivora */
+  --color-secondary: oklch(10% 0.08 260);       /* ≈ #0F172A */
+  --color-secondary-content: oklch(96% 0.01 260);
+
+  /* Accent – progression / énergie */
+  --color-accent: oklch(65% 0.18 150);
+  --color-accent-content: oklch(98% 0.01 150);
+
+  /* Neutral */
+  --color-neutral: oklch(40% 0.03 260);
+  --color-neutral-content: oklch(96% 0.01 260);
+
+  /* Info */
+  --color-info: oklch(65% 0.12 220);
+  --color-info-content: oklch(98% 0.01 220);
+
+  /* Success */
+  --color-success: oklch(62% 0.17 145);
+  --color-success-content: oklch(98% 0.01 145);
+
+  /* Warning */
+  --color-warning: oklch(80% 0.18 85);
+  --color-warning-content: oklch(20% 0.04 85);
+
+  /* Error */
+  --color-error: oklch(60% 0.22 30);
+  --color-error-content: oklch(98% 0.01 30);
+
+  /* Radius */
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+
+  /* Sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* Border */
+  --border: 1px;
+
+  /* Effects */
+  --depth: 1;
+  --noise: 0;
+
+  
 }
+
+:root {
+  --background: oklch(98% 0.01 240);
+  --foreground: oklch(20% 0.04 260);
+  --card: oklch(100% 0 0);
+  --muted: oklch(95% 0.015 240);
+}
+
 body {
- 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
 }

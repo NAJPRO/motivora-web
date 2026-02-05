@@ -15,44 +15,26 @@ function classNames(...classes: string[]) {
 export default function TopNavBar() {
     return (
         <Disclosure
-            as="nav"
-            className="relative bg-light-800/50 shadow after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
-        >
+  as="nav"
+  className="fixed top-0 left-0 right-0 z-50 bg-light-800/50 shadow backdrop-blur after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
+>
+
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
-                    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        {/* Mobile menu button*/}
-                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-                            <span className="absolute -inset-0.5" />
-                            <span className="sr-only">Open main menu</span>
-                            <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
-                            <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
-                        </DisclosureButton>
-                    </div>
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-                        <div className="flex shrink-0 items-center">
-                            {/* <img
-                                alt="Your Company"
-                                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                                className="h-8 w-auto"
-                                 /> */}
-                            {/* <img
-                                alt="Motivora Logo"
-                                src="./motivora-texte.svg"
-                                className="h-10 w-auto"
-                                /> */}
 
-                            <span className="ml-2 text-xl text-gray-800 font-bold">Moti<span className='text-orange-500'>vora</span></span>
+                    <div className="flex flex-1 items-center justify-start  sm:items-stretch sm:justify-between">
+                        <div className="flex shrink-0 items-center">
+                            <span className="ml-2 text-3xl text-primary font-black font-serif">Motivora</span>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
-                            <div className="flex space-x-4">
+                            <div className="flex space-x-4 ">
                                 {navigation.map((item) => (
                                     <a
                                         key={item.name}
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'text-orange-500 font-bold' : 'text-gray-600 hover:bg-white/5 hover:text-orange-500',
+                                            item.current ? 'text-primary font-bold' : 'text-base-100 hover:bg-white/5 hover:text-primary ',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
@@ -61,17 +43,26 @@ export default function TopNavBar() {
                                 ))}
                             </div>
                         </div>
-                        <div className='flex gap-x-2'>
-                            <Button variant={"destructive"}> 
+                        <div className='gap-x-2 hidden sm:flex '>
+                            <Button variant={"destructive"} className='text-secondary-content hidden sm:flex hover:text-primary'>
                                 <span>
                                     <DevicePhoneMobileIcon aria-hidden="true" className="size-6" />
                                 </span>
-                                <span>
+                                <span className='hidden md:flex'>
                                     Télécharger l&apos;app
-                                </span> 
+                                </span>
                             </Button>
                             <Button variant={"outline"}>Se connecter</Button>
                             {/* <button className='btn btn-primary'>Se connecter</button> */}
+                        </div>
+                        <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                            {/* Mobile menu button*/}
+                            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+                                <span className="absolute -inset-0.5" />
+                                <span className="sr-only">Open main menu</span>
+                                <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
+                                <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
+                            </DisclosureButton>
                         </div>
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -139,13 +130,30 @@ export default function TopNavBar() {
                             href={item.href}
                             aria-current={item.current ? 'page' : undefined}
                             className={classNames(
-                                item.current ? ' text-orange-500 font-bold' : 'text-gray-600 hover:bg-white/5 hover:text-orange-500',
+                                item.current ? ' text-primary font-bold' : 'text-base-300 hover:bg-white/5 hover:text-primary',
                                 'block rounded-md px-3 py-2 text-base font-medium',
                             )}
                         >
                             {item.name}
                         </DisclosureButton>
+
                     ))}
+                    <DisclosureButton
+                        as='a'
+                        href='#'
+                        className='text-base-300 hover:bg-white/5 hover:text-primary flex rounded-md px-3 py-2 text-base font-medium'
+                    >
+                        <DevicePhoneMobileIcon aria-hidden="true" className="size-6" />
+                        Télécharger l&apos;app
+                    </DisclosureButton>
+
+                    <DisclosureButton
+                        as='a'
+                        href='#'
+                        className='flex justify-center w-full mt-2'
+                    >
+                        <Button variant={"outline"} className='w-full'>Se connecter</Button>
+                    </DisclosureButton>
                 </div>
             </DisclosurePanel>
         </Disclosure>
