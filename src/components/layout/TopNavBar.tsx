@@ -1,11 +1,12 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, DevicePhoneMobileIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Button } from '../ui/Button'
+import Link from 'next/link'
 
 const navigation = [
-    { name: 'Acceuil', href: '#', current: true },
-    { name: 'Explorer', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
+    { name: 'Acceuil', href: '/', current: true },
+    { name: 'Explorer', href: 'explorer', current: false },
+    { name: 'Projects', href: 'explorer', current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -15,17 +16,16 @@ function classNames(...classes: string[]) {
 export default function TopNavBar() {
     return (
         <Disclosure
-  as="nav"
-  className="fixed top-0 left-0 right-0 z-50 bg-light-800/50 shadow backdrop-blur after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
->
-
+            as="nav"
+            className="fixed top-0 left-0 right-0 z-50 bg-light-800/50 shadow backdrop-blur after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
+        >
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
 
                     <div className="flex flex-1 items-center justify-start  sm:items-stretch sm:justify-between">
-                        <div className="flex shrink-0 items-center">
+                        <Link href={"/"} className="flex shrink-0 items-center">
                             <span className="ml-2 text-3xl text-primary font-black font-serif">Motivora</span>
-                        </div>
+                        </Link>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4 ">
                                 {navigation.map((item) => (

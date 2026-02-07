@@ -1,7 +1,8 @@
 import { HeartIcon, PlayCircleIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
-import { FaApple, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa6";
-import { Button } from "./Button";
+import { FaApple, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa6";
+import { Button } from "../ui/Button";
+import { PiCopyrightBold } from "react-icons/pi";
 
 const footerLinks = {
   product: [
@@ -24,24 +25,22 @@ const footerLinks = {
 };
 
 const socialLinks = [
+  { icon: FaFacebook, href: "#", label: "Facebook" },
   { icon: FaInstagram, href: "#", label: "Instagram" },
   { icon: FaTwitter, href: "#", label: "Twitter" },
-  { icon: FaLinkedin, href: "#", label: "LinkedIn" },
+  { icon: FaWhatsapp, href: "#", label: "whatsapp" },
 ];
 
 const Footer = () => {
   return (
-    <div className="py-16 border-t bg-secondary text-secondary-content border-border/50 bg-night-light/50">
+    <div className="bottom-0 left-0 right-0 pt-20  border-t border-y-neutral-600 bg-secondary/20 text-secondary-content ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center">
-                <span className="text-primary-foreground font-serif font-bold text-xl">M</span>
-              </div>
-              <span className="font-serif text-xl font-semibold text-foreground">
+              <span className="font-serif text-xl md:text-4xl font-semibold text-primary">
                 Motivora
               </span>
             </Link>
@@ -128,9 +127,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright */}
             <div className="flex items-center gap-1 text-sm text-muted-foreground">
-              <span>© 2024 Motivora. Fait avec</span>
-              <HeartIcon className="w-4 h-4 text-destructive fill-destructive" />
-              <span>en France</span>
+              <PiCopyrightBold /> 
+              <span>2026 Motivora - By </span>
+              <span>Audin Junior</span>
             </div>
 
             {/* Social Links */}

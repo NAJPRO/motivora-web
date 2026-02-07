@@ -1,0 +1,17 @@
+export const themes = [
+  { id: 1, name: "Motivation", slug: "motivation" },
+  { id: 2, name: "Succès", slug: "succes" },
+  { id: 3, name: "Bonheur", slug: "bonheur" },
+  { id: 4, name: "Sagesse", slug: "sagesse" },
+  { id: 5, name: "Discipline", slug: "discipline" },
+  { id: 6, name: "Persévérance", slug: "perseverance" },
+  { id: 7, name: "Confiance en soi", slug: "confiance-en-soi" },
+  { id: 8, name: "Courage", slug: "courage" },
+  { id: 9, name: "Développement personnel", slug: "developpement-personnel" },
+  { id: 10, name: "Résilience", slug: "resilience" },
+  { id: 11, name: "Vision", slug: "vision" },
+  { id: 12, name: "Liberté", slug: "liberte" },
+  { id: 13, name: "Gratitude", slug: "gratitude" },
+  { id: 14, name: "Leadership", slug: "leadership" },
+  { id: 15, name: "Paix intérieure", slug: "paix-interieure" },
+]

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import TopNavBar from "@/components/layout/TopNavBar";
-import Footer from "@/components/ui/Footer";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,9 +39,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"  
+    <html lang="en"
       data-theme="motivora"
-      className={`${poppins.variable} ${playfair.variable} bg-secondary  h-full`}  
+      className={`${poppins.variable} ${playfair.variable} bg-secondary  h-full`}
     >
       <body className="bg-secondary h-screen">
         <header>
@@ -51,7 +51,7 @@ export default function RootLayout({
           {children}
         </main>
         <footer>
-          <Footer/>
+          <Footer />
 
         </footer>
       </body>
