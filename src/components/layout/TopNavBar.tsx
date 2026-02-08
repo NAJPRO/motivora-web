@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const navigation = [
     { name: 'Acceuil', href: '/', current: true },
-    { name: 'Explorer', href: 'explorer', current: false },
+    { name: 'Citations', href: 'citation', current: false },
     { name: 'Projects', href: 'explorer', current: false },
 ]
 

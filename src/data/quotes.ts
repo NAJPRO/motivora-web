@@ -2,6 +2,7 @@ export interface Quote {
   id: string;
   text: string;
   author: string;
+  slug: string;
   category: string;
   views: number;
   likes: number;
@@ -20,10 +21,10 @@ export const categories = [
 ] as const;
 
 export type Category = typeof categories[number];
-
 export const quotes: Quote[] = [
   {
     id: "1",
+    slug: "le-succès-n-est-pas-final-l-échec-n-est-pas-fatal",
     text: "Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte.",
     author: "Winston Churchill",
     category: "Courage",
@@ -33,6 +34,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "2",
+    slug: "la-seule-façon-de-faire-du-bon-travail-est-d-aimer-ce-que-vous-faites",
     text: "La seule façon de faire du bon travail est d'aimer ce que vous faites.",
     author: "Steve Jobs",
     category: "Motivation",
@@ -42,6 +44,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "3",
+    slug: "croyez-que-vous-pouvez-et-vous-êtes-à-mi-chemin",
     text: "Croyez que vous pouvez et vous êtes à mi-chemin.",
     author: "Theodore Roosevelt",
     category: "Confiance",
@@ -51,6 +54,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "4",
+    slug: "le-bonheur-n-est-pas-quelque-chose-de-prêt-à-l-emploi",
     text: "Le bonheur n'est pas quelque chose de prêt à l'emploi. Il vient de vos propres actions.",
     author: "Dalai Lama",
     category: "Bonheur",
@@ -60,6 +64,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "5",
+    slug: "votre-temps-est-limité-ne-le-gaspillez-pas",
     text: "Votre temps est limité, ne le gaspillez pas à vivre la vie de quelqu'un d'autre.",
     author: "Steve Jobs",
     category: "Sagesse",
@@ -69,6 +74,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "6",
+    slug: "le-secret-du-changement-est-de-concentrer-toute-votre-énergie",
     text: "Le secret du changement est de concentrer toute votre énergie non pas à lutter contre l'ancien mais à construire le nouveau.",
     author: "Socrate",
     category: "Sagesse",
@@ -78,6 +84,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "7",
+    slug: "la-persévérance-n-est-pas-une-longue-course",
     text: "La persévérance n'est pas une longue course ; c'est beaucoup de petites courses l'une après l'autre.",
     author: "Walter Elliot",
     category: "Persévérance",
@@ -87,6 +94,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "8",
+    slug: "aimer-et-être-aimé-voilà-le-bonheur-suprême-de-l-existence",
     text: "Aimer et être aimé, voilà le bonheur suprême de l'existence.",
     author: "George Sand",
     category: "Amour",
@@ -96,6 +104,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "9",
+    slug: "le-succès-c-est-d-aller-d-échec-en-échec-sans-perdre-son-enthousiasme",
     text: "Le succès c'est d'aller d'échec en échec sans perdre son enthousiasme.",
     author: "Winston Churchill",
     category: "Succès",
@@ -105,6 +114,7 @@ export const quotes: Quote[] = [
   },
   {
     id: "10",
+    slug: "la-plus-grande-gloire-n-est-pas-de-ne-jamais-tomber",
     text: "La plus grande gloire n'est pas de ne jamais tomber, mais de se relever à chaque chute.",
     author: "Confucius",
     category: "Courage",

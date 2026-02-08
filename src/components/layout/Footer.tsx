@@ -33,7 +33,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <div className="bottom-0 left-0 right-0 pt-20  border-t border-y-neutral-600 bg-secondary/20 text-secondary-content ">
+    <div className="bottom-0 left-0 right-0 pt-20  border-t border-y-neutral-600 bg-secondary/20 text-secondary-content/50 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">

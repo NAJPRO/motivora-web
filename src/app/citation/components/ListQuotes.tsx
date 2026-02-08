@@ -16,7 +16,7 @@ const ListQuotes = ({ viewMode = "grid" }: ListProps) => {
             <div
                 className={
                     viewMode === "grid"
-                        ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        ? "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 "
                         : "flex flex-col gap-4 max-w-3xl px-5 mx-auto "
                 }
             >
@@ -27,11 +27,12 @@ const ListQuotes = ({ viewMode = "grid" }: ListProps) => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.05 }}
+                        className="px-5 sm:px-0"
                     >
-                        <Link href={`/citation/${quote.id}`}>
+                        <Link href={`/citation/${quote.slug}`}>
                             <div
                                 className={`glass-card p-6  bg-secondary-content/10 rounded-2xl backdrop-blur-md hover-lift h-full flex flex-col group cursor-pointer ${viewMode === "list"
-                                        ? "flex-col items-center  gap-6"
+                                        ? "flex-col items-center gap-5"
                                         : ""
                                     }`}
                             >
@@ -75,6 +76,9 @@ const ListQuotes = ({ viewMode = "grid" }: ListProps) => {
                                         <span className="flex items-center gap-1 text-muted-foreground text-sm">
                                             <EyeIcon className="w-4 h-4" />
                                             {quote.views}
+                                        </span>
+                                        <span className="flex items-center gap-1 text-muted-foreground text-sm">
+                                            <EyeIcon className="w-4 h-4" />
                                         </span>
                                     </div>
                                 </div>
